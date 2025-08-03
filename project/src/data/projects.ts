@@ -54,7 +54,7 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     status: 'completed',
     links: {
-      github: 'https://github.com/Giridhar-07/portfolio',
+      github: 'https://github.com/Giridhar-07/portfolio_giri',
     },
     featured: true,
   },
