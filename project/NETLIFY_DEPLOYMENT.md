@@ -16,7 +16,13 @@ This guide will help you deploy your portfolio website to Netlify.
    ```
    This should create a `dist` folder with your built project.
 
-2. Ensure your `netlify.toml` file is in the root of your project (already created).
+2. Ensure your `netlify.toml` file is properly configured:
+   - The file should be in the root of your project (already created)
+   - If your project files are in a subdirectory (like `project/`), make sure the `base` setting in `netlify.toml` points to that directory:
+     ```toml
+     [build]
+       base = "project/"
+     ```
 
 3. Commit and push all changes to your GitHub repository:
    ```bash
@@ -103,7 +109,8 @@ If your build fails on Netlify:
 
 1. Check the build logs in Netlify for specific errors
 2. Ensure your project builds successfully locally
-3. Verify that your `netlify.toml` configuration is correct
+3. Verify that your `netlify.toml` configuration is correct, especially the `base` directory setting
+4. Make sure the `base` directory in `netlify.toml` is set to `project/` if your project files are in a subdirectory
 
 ## Continuous Deployment
 
