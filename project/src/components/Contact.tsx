@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
       await navigator.clipboard.writeText('giridharmalagi7@gmail.com');
       setEmailCopied(true);
       setTimeout(() => setEmailCopied(false), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error('Failed to copy email');
     }
   };
