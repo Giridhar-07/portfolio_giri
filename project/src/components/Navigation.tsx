@@ -106,15 +106,15 @@ const Navigation: React.FC = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center space-x-4">
+            <div className="md:hidden flex items-center space-x-3">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 onClick={toggleTheme}
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-all duration-300"
+                className="p-1.5 sm:p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-all duration-300"
               >
-                {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                {isDarkMode ? <Sun size={18} className="sm:size-[20px]" /> : <Moon size={18} className="sm:size-[20px]" />}
               </motion.button>
               
               <motion.button
@@ -122,11 +122,11 @@ const Navigation: React.FC = () => {
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-all duration-300 mobile-menu-button"
+                className="p-1.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-all duration-300 mobile-menu-button"
                 aria-label="Toggle mobile menu"
                 aria-expanded={isMenuOpen}
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMenuOpen ? <X size={20} className="sm:size-[24px]" /> : <Menu size={20} className="sm:size-[24px]" />}
               </motion.button>
             </div>
           </div>
@@ -142,14 +142,14 @@ const Navigation: React.FC = () => {
           transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
           className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden transition-colors duration-300 mobile-menu-container"
         >
-          <div className="px-4 py-2 space-y-1">
+          <div className="px-4 py-2 space-y-0.5 sm:space-y-1">
             {menuItems.map((item) => (
               <motion.button
                 key={item.name}
                 whileHover={{ x: 10 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+                className="block w-full text-left px-3 py-2 rounded-md text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
               >
                 {item.name}
               </motion.button>
