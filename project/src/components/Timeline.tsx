@@ -42,7 +42,7 @@ const Timeline: React.FC = () => {
   };
 
   return (
-    <section id="timeline" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <section id="timeline" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={elementRef}
@@ -63,10 +63,11 @@ const Timeline: React.FC = () => {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-300 dark:bg-gray-600 transition-colors duration-300"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-300 dark:bg-gray-600 transition-colors duration-300 hidden md:block"></div>
+          <div className="absolute left-6 top-0 w-0.5 h-full bg-gray-300 dark:bg-gray-600 transition-colors duration-300 md:hidden"></div>
 
           {/* Timeline Items */}
-          <div className="space-y-12">
+          <div className="space-y-16 md:space-y-12">
             {timelineData.map((item, index) => {
               const Icon = getIcon(item.type);
               const isEven = index % 2 === 0;
@@ -80,7 +81,7 @@ const Timeline: React.FC = () => {
                   className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col`}
                 >
                   {/* Content */}
-                  <div className={`md:w-5/12 w-full ${isEven ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'} text-left px-4 mb-6 md:mb-0`}>
+                  <div className={`md:w-5/12 w-full ${isEven ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'} text-left pl-16 pr-4 md:px-4 mb-6 md:mb-0`}>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
@@ -118,7 +119,7 @@ const Timeline: React.FC = () => {
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-700 dark:text-gray-300 mb-4 transition-colors duration-300">
+                      <p className="text-gray-700 dark:text-gray-300 mb-4 transition-colors duration-300 text-sm md:text-base">
                         {item.description}
                       </p>
 
@@ -139,13 +140,13 @@ const Timeline: React.FC = () => {
                   </div>
 
                   {/* Icon */}
-                  <div className="md:absolute relative md:left-1/2 md:transform md:-translate-x-1/2 z-10 mb-6 md:mb-0">
+                  <div className="md:absolute absolute md:left-1/2 left-6 md:transform md:-translate-x-1/2 -translate-x-1/2 z-10 mb-6 md:mb-0">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.3 }}
-                      className={`w-12 h-12 rounded-full flex items-center justify-center ${getIconColor(item.type)} shadow-lg transition-all duration-300 mx-auto`}
+                      className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center ${getIconColor(item.type)} shadow-lg transition-all duration-300 mx-auto`}
                     >
-                      <Icon size={20} />
+                      <Icon size={18} className="md:size-[20px]" />
                     </motion.div>
                   </div>
 
