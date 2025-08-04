@@ -77,18 +77,18 @@ const Timeline: React.FC = () => {
                   initial={{ opacity: 1, x: isEven ? -50 : 50 }}
                   animate={isIntersecting ? { opacity: 1, x: 0 } : { opacity: 1, x: isEven ? -50 : 50 }}
                   transition={{ duration: 0.8, delay: index * 0.15, ease: [0.4, 0, 0.2, 1] }}
-                  className={`relative flex items-center ${isEven ? 'flex-row' : 'flex-row-reverse'}`}
+                  className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col`}
                 >
                   {/* Content */}
-                  <div className={`w-5/12 ${isEven ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                  <div className={`md:w-5/12 w-full ${isEven ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'} text-left px-4 mb-6 md:mb-0`}>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                       className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated"
                     >
                       {/* Header */}
-                      <div className={`flex items-center mb-3 ${isEven ? 'flex-row-reverse' : 'flex-row'}`}>
-                        <div className={`${isEven ? 'ml-3' : 'mr-3'}`}>
+                      <div className={`flex items-center mb-3 ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} flex-row`}>
+                        <div className={`${isEven ? 'md:ml-3' : 'md:mr-3'} mr-3`}>
                           <h3 className="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
                             {item.title}
                           </h3>
@@ -104,8 +104,8 @@ const Timeline: React.FC = () => {
                       </div>
 
                       {/* Location and Date */}
-                      <div className={`flex items-center text-gray-600 dark:text-gray-400 text-sm mb-3 transition-colors duration-300 ${isEven ? 'flex-row-reverse' : 'flex-row'}`}>
-                        <div className={`flex items-center ${isEven ? 'ml-4' : 'mr-4'}`}>
+                      <div className={`flex flex-wrap items-center text-gray-600 dark:text-gray-400 text-sm mb-3 transition-colors duration-300 ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} flex-row`}>
+                        <div className={`flex items-center ${isEven ? 'md:ml-4' : 'md:mr-4'} mr-4 mb-1 md:mb-0`}>
                           <MapPin size={16} className="mr-1" />
                           <span>{item.location}</span>
                         </div>
@@ -124,7 +124,7 @@ const Timeline: React.FC = () => {
 
                       {/* Skills */}
                       {item.skills && (
-                        <div className={`flex flex-wrap gap-2 ${isEven ? 'justify-end' : 'justify-start'}`}>
+                        <div className={`flex flex-wrap gap-2 ${isEven ? 'md:justify-end' : 'md:justify-start'} justify-start`}>
                           {item.skills.map((skill) => (
                             <span
                               key={skill}
@@ -139,18 +139,18 @@ const Timeline: React.FC = () => {
                   </div>
 
                   {/* Icon */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="md:absolute relative md:left-1/2 md:transform md:-translate-x-1/2 z-10 mb-6 md:mb-0">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.3 }}
-                      className={`w-12 h-12 rounded-full flex items-center justify-center ${getIconColor(item.type)} shadow-lg transition-all duration-300`}
+                      className={`w-12 h-12 rounded-full flex items-center justify-center ${getIconColor(item.type)} shadow-lg transition-all duration-300 mx-auto`}
                     >
                       <Icon size={20} />
                     </motion.div>
                   </div>
 
                   {/* Spacer */}
-                  <div className="w-5/12"></div>
+                  <div className="md:w-5/12 hidden md:block"></div>
                 </motion.div>
               );
             })}
