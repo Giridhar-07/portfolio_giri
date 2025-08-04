@@ -24,3 +24,7 @@
 # Build plugins
 [[plugins]]
   package = "@netlify/plugin-sitemap"
+
+# Disable any UI-added plugins that might conflict
+[plugins.inputs]
+  exclude = ["netlify-plugin-cloudinary"]
