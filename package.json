@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-website-root",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "cd project && npm install && npm run build",
+    "dev": "cd project && npm install && npm run dev",
+    "lint": "cd project && npm install && npm run lint",
+    "preview": "cd project && npm install && npm run preview",
+    "deploy": "cd project && npm install && npm run deploy",
+    "netlify": "cd project && npm install && npm run netlify"
+  }
+}

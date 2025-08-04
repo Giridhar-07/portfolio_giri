@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
       await navigator.clipboard.writeText('giridharmalagi7@gmail.com');
       setEmailCopied(true);
       setTimeout(() => setEmailCopied(false), 2000);
-    } catch (err) {
+    } catch {
       console.error('Failed to copy email');
     }
   };
@@ -124,26 +124,26 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section id="contact" className="py-12 sm:py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={elementRef}
           initial={{ opacity: 0, y: 50 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 transition-colors duration-300">
             Let's Work Together
           </h2>
-          <div className="w-24 h-1 bg-primary-600 mx-auto mb-6 transition-colors duration-300"></div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
+          <div className="w-20 sm:w-24 h-1 bg-primary-600 mx-auto mb-4 sm:mb-6 transition-colors duration-300"></div>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
             Ready to collaborate on exciting projects or discuss opportunities? 
             I'd love to hear about your next challenge.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -152,10 +152,10 @@ const Contact: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300">
                 Get In Touch
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8 transition-colors duration-300">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 transition-colors duration-300">
                 Whether you have a project in mind, want to discuss opportunities, 
                 or just want to connect, I'm always excited to meet fellow 
                 technology enthusiasts and potential collaborators.
@@ -169,18 +169,18 @@ const Contact: React.FC = () => {
                   key={item.label}
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.3 }}
-                  className="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg transition-all duration-300"
+                  className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gray-50 dark:bg-gray-800 rounded-lg transition-all duration-300"
                 >
-                  <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900 rounded-lg transition-colors duration-300">
-                    <item.icon className="text-primary-600 dark:text-primary-400 transition-colors duration-300" size={20} />
+                  <div className="flex-shrink-0 p-2 sm:p-3 bg-primary-100 dark:bg-primary-900 rounded-lg transition-colors duration-300">
+                    <item.icon className="text-primary-600 dark:text-primary-400 transition-colors duration-300" size={18} />
                   </div>
                   <div className="flex-grow">
-                    <p className="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-300">{item.label}</p>
+                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 transition-colors duration-300">{item.label}</p>
                     <a
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
+                      className="text-sm sm:text-base text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
                     >
                       {item.value}
                     </a>
@@ -191,9 +191,9 @@ const Contact: React.FC = () => {
                       whileTap={{ scale: 0.9 }}
                       transition={{ duration: 0.3 }}
                       onClick={copyEmail}
-                      className="p-2 text-gray-500 hover:text-primary-600 transition-colors duration-300"
+                      className="p-1.5 sm:p-2 text-gray-500 hover:text-primary-600 transition-colors duration-300"
                     >
-                      {emailCopied ? <CheckCircle size={20} /> : <Copy size={20} />}
+                      {emailCopied ? <CheckCircle size={18} /> : <Copy size={18} />}
                     </motion.button>
                   )}
                 </motion.div>
@@ -202,10 +202,10 @@ const Contact: React.FC = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 transition-colors duration-300">
                 Connect With Me
               </h4>
-              <div className="flex space-x-4">
+              <div className="flex space-x-3 sm:space-x-4">
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.label}
@@ -215,9 +215,9 @@ const Contact: React.FC = () => {
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ duration: 0.3 }}
-                    className={`p-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 transition-all duration-300 ${social.color} hardware-accelerated`}
+                    className={`p-2.5 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 transition-all duration-300 ${social.color} hardware-accelerated`}
                   >
-                    <social.icon size={24} />
+                    <social.icon size={20} className="sm:size-[24px]" />
                   </motion.a>
                 ))}
               </div>
@@ -229,16 +229,16 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isIntersecting ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-            className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 transition-colors duration-300"
+            className="bg-gray-50 dark:bg-gray-800 rounded-xl p-5 sm:p-8 transition-colors duration-300"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300">
               Send Message
             </h3>
 
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">
+                  <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 sm:mb-2 transition-colors duration-300">
                     Name
                   </label>
                   <input
@@ -248,12 +248,12 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 text-sm sm:text-base"
                     placeholder="Your Name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">
+                  <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 sm:mb-2 transition-colors duration-300">
                     Email
                   </label>
                   <input
@@ -263,14 +263,14 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 text-sm sm:text-base"
                     placeholder="your@email.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">
+                <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 sm:mb-2 transition-colors duration-300">
                   Subject
                 </label>
                 <input
@@ -280,13 +280,13 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300"
-                  placeholder="Project Inquiry"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 text-sm sm:text-base"
+                  placeholder="What's this about?"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">
+                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 sm:mb-2 transition-colors duration-300">
                   Message
                 </label>
                 <textarea
@@ -295,10 +295,10 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 resize-none"
-                  placeholder="Tell me about your project or idea..."
-                />
+                  rows={4}
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 text-sm sm:text-base"
+                  placeholder="Your message here..."
+                ></textarea>
               </div>
 
               <motion.button
@@ -307,16 +307,16 @@ const Contact: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.3 }}
-                className="w-full flex items-center justify-center px-8 py-3 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated"
+                className="w-full flex items-center justify-center px-4 sm:px-8 py-2.5 sm:py-3 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated text-sm sm:text-base"
               >
                 {isSubmitting ? (
                   <div className="flex items-center">
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                    <div className="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 border-b-2 border-white mr-2"></div>
                     Sending...
                   </div>
                 ) : (
                   <>
-                    <Send size={20} className="mr-2" />
+                    <Send size={18} className="sm:size-[20px] mr-2" />
                     Send Message
                   </>
                 )}
@@ -326,10 +326,15 @@ const Contact: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 rounded-lg transition-colors duration-300"
+                  className="mt-3 sm:mt-4 p-3 sm:p-4 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-800 rounded-lg text-green-700 dark:text-green-300 flex items-start"
                 >
-                  {submitMessage}
+                  <CheckCircle className="mr-2 sm:mr-3 mt-0.5" size={16} />
+                  <div>
+                    <p className="font-medium text-sm sm:text-base">Message sent successfully!</p>
+                    <p className="text-xs sm:text-sm mt-0.5 sm:mt-1">{submitMessage}</p>
+                  </div>
                 </motion.div>
               )}
               
@@ -337,10 +342,15 @@ const Contact: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-300 rounded-lg transition-colors duration-300"
+                  className="mt-3 sm:mt-4 p-3 sm:p-4 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300 flex items-start"
                 >
-                  {errorMessage}
+                  <Mail className="mr-2 sm:mr-3 mt-0.5" size={16} />
+                  <div>
+                    <p className="font-medium text-sm sm:text-base">Failed to send message</p>
+                    <p className="text-xs sm:text-sm mt-0.5 sm:mt-1">{errorMessage}</p>
+                  </div>
                 </motion.div>
               )}
             </form>

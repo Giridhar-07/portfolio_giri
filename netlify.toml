@@ -1,0 +1,30 @@
+# Root netlify.toml that redirects to the project directory
+
+[build]
+  # Directory to change to before starting a build
+  base = "/"
+  
+  # Directory that contains the deploy-ready HTML files and assets
+  publish = "project/dist"
+  
+  # Default build command
+  command = "npm run build"
+
+# Redirects and headers
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables
+[build.environment]
+  # Add any environment variables needed for build
+  NODE_VERSION = "18"
+
+# Build plugins
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+# Disable any UI-added plugins that might conflict
+[plugins.inputs]
+  exclude = ["netlify-plugin-cloudinary"]

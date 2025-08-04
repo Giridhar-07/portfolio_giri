@@ -132,6 +132,17 @@ const checkNetlifyConfig = () => {
     return false;
   } else {
     log.success('netlify.toml file found.');
+    
+    // Check if base directory is correctly set
+    const netlifyConfig = fs.readFileSync(netlifyTomlPath, 'utf8');
+    if (!netlifyConfig.includes('base = "project/"')) {
+      log.error('The base directory in netlify.toml is not correctly set!');
+      log.info('If your project files are in a subdirectory, ensure the base setting is: base = "project/"');
+      log.info('This is critical for Netlify to find your package.json file during deployment.');
+      return false;
+    } else {
+      log.success('Base directory in netlify.toml is correctly set.');
+    }
   }
   
   if (!fs.existsSync(redirectsPath)) {

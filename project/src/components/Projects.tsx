@@ -60,7 +60,7 @@ const Projects: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4 sm:px-0"
         >
           {filters.map((filter) => (
             <motion.button
@@ -85,7 +85,7 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           <AnimatePresence mode="wait">
             {filteredProjects.map((project, index) => (
               <motion.div
@@ -102,11 +102,11 @@ const Projects: React.FC = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500 hardware-accelerated"
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500 hardware-accelerated"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="flex space-x-3">
+                    <div className="flex space-x-2 sm:space-x-3">
                       {project.links.demo && (
                         <motion.a
                           whileHover={{ scale: 1.1 }}
@@ -115,9 +115,9 @@ const Projects: React.FC = () => {
                           href={project.links.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300"
+                          className="p-1.5 sm:p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300"
                         >
-                          <Eye size={20} />
+                          <Eye size={18} className="sm:size-[20px]" />
                         </motion.a>
                       )}
                       {project.links.github && (
@@ -128,9 +128,9 @@ const Projects: React.FC = () => {
                           href={project.links.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300"
+                          className="p-1.5 sm:p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300"
                         >
-                          <Github size={20} />
+                          <Github size={18} className="sm:size-[20px]" />
                         </motion.a>
                       )}
                       {project.links.caseStudy && (
@@ -141,9 +141,9 @@ const Projects: React.FC = () => {
                           href={project.links.caseStudy}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300"
+                          className="p-1.5 sm:p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300"
                         >
-                          <ExternalLink size={20} />
+                          <ExternalLink size={18} className="sm:size-[20px]" />
                         </motion.a>
                       )}
                     </div>
@@ -151,59 +151,59 @@ const Projects: React.FC = () => {
                   
                   {/* Featured Badge */}
                   {project.featured && (
-                    <div className="absolute top-4 left-4">
-                      <div className="flex items-center px-2 py-1 bg-accent-500 text-white rounded-full text-sm font-medium">
-                        <Star size={14} className="mr-1" />
+                    <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
+                      <div className="flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 bg-accent-500 text-white rounded-full text-xs sm:text-sm font-medium">
+                        <Star size={12} className="mr-0.5 sm:mr-1 sm:size-[14px]" />
                         Featured
                       </div>
                     </div>
                   )}
                   
                   {/* Status Badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium capitalize transition-colors duration-300 ${getStatusColor(project.status)}`}>
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
+                    <span className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium capitalize transition-colors duration-300 ${getStatusColor(project.status)}`}>
                       {project.status.replace('-', ' ')}
                     </span>
                   </div>
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
                     {project.title}
                   </h3>
                   
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 transition-colors duration-300">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 line-clamp-3 transition-colors duration-300">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {project.technologies.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded text-xs font-medium transition-colors duration-300"
+                        className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded text-xs font-medium transition-colors duration-300"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 4 && (
-                      <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded text-xs transition-colors duration-300">
+                      <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded text-xs transition-colors duration-300">
                         +{project.technologies.length - 4} more
                       </span>
                     )}
                   </div>
 
                   {/* Links */}
-                  <div className="flex space-x-3">
+                  <div className="flex space-x-2 sm:space-x-3">
                     {project.links.github && (
                       <a
                         href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
+                        className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 p-1"
                       >
-                        <Github size={18} />
+                        <Github size={16} className="sm:size-[18px]" />
                       </a>
                     )}
                     {project.links.demo && (
@@ -211,9 +211,9 @@ const Projects: React.FC = () => {
                         href={project.links.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
+                        className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 p-1"
                       >
-                        <ExternalLink size={18} />
+                        <ExternalLink size={16} className="sm:size-[18px]" />
                       </a>
                     )}
                   </div>
@@ -237,9 +237,9 @@ const Projects: React.FC = () => {
             href="https://github.com/Giridhar-07"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated"
+            className="inline-flex items-center px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-sm sm:text-base font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated"
           >
-            <Github size={20} className="mr-2" />
+            <Github size={18} className="mr-1.5 sm:mr-2 sm:size-[20px]" />
             View All Projects on GitHub
           </motion.a>
         </motion.div>

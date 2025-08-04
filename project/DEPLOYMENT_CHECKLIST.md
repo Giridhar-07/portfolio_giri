@@ -56,6 +56,7 @@ Use this checklist to ensure your portfolio website is properly deployed to Netl
 - [ ] Configure build settings:
   - Build command: `npm run build`
   - Publish directory: `dist`
+  - Base directory: `project/` (if your project files are in a subdirectory)
 - [ ] Add environment variables in Netlify:
   - `VITE_EMAILJS_SERVICE_ID`
   - `VITE_EMAILJS_TEMPLATE_ID`
@@ -90,6 +91,8 @@ Use this checklist to ensure your portfolio website is properly deployed to Netl
 - Check the build logs in Netlify
 - Verify your project builds locally
 - Check for missing dependencies
+- Ensure the base directory is correctly set in `netlify.toml` if your project files are in a subdirectory
+- Verify Netlify can find your `package.json` file (common error: "Could not read package.json")
 
 #### Contact Form Issues
 - Verify environment variables are set correctly in Netlify
