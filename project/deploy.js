@@ -91,7 +91,7 @@ VITE_EMAILJS_USER_ID=your_user_id
   return true;
 };
 
-// Check if netlify.toml exists
+// Check if netlify.toml exists and has correct configuration
 const checkNetlifyConfig = () => {
   log.section('Checking Netlify Configuration');
   
@@ -101,6 +101,14 @@ const checkNetlifyConfig = () => {
     log.error('netlify.toml file not found!');
     log.info('Please create a netlify.toml file with the appropriate configuration.');
     return false;
+  }
+  
+  // Check if base directory is correctly set
+  const netlifyConfig = fs.readFileSync(netlifyConfigPath, 'utf8');
+  if (!netlifyConfig.includes('base = "project/"')) {
+    log.warning('The base directory in netlify.toml might not be correctly set.');
+    log.info('If your project files are in a subdirectory, ensure the base setting is: base = "project/"');
+    log.info('This is critical for Netlify to find your package.json file during deployment.');
   }
   
   log.success('netlify.toml file found.');
@@ -136,7 +144,8 @@ const showDeploymentInstructions = () => {
   console.log('2. Log in to Netlify and create a new site from Git');
   console.log('   - Select your GitHub repository');
   console.log('   - Set build command: npm run build');
-  console.log('   - Set publish directory: dist\n');
+  console.log('   - Set publish directory: dist');
+  console.log('   - Ensure base directory is set to "project/" if your files are in a subdirectory\n');
   
   console.log('3. Add environment variables in Netlify');
   console.log('   - Go to Site settings > Environment variables');

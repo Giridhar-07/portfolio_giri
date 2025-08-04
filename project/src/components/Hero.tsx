@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
-              className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300"
             >
               Giridhar N Malagi
             </motion.h1>
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-              className="text-2xl md:text-3xl text-primary-600 dark:text-primary-400 font-semibold mb-4 transition-colors duration-300"
+              className="text-xl sm:text-2xl md:text-3xl text-primary-600 dark:text-primary-400 font-semibold mb-3 sm:mb-4 transition-colors duration-300"
             >
               Electronics & Communication Engineering Student
             </motion.div>
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-4 transition-colors duration-300"
+              className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-3 sm:mb-4 px-4 transition-colors duration-300"
             >
               Passionate about Data Analytics and Web Development. Transforming ideas into 
               impactful technological solutions through innovative thinking and continuous learning.
@@ -79,15 +79,15 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5, ease: [0.4, 0, 0.2, 1] }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4 sm:px-0"
           >
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleDownloadResume}
-              className="flex items-center px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated"
+              className="flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated text-sm sm:text-base"
             >
-              <Download size={20} className="mr-2" />
+              <Download size={18} className="mr-2" />
               Download Resume
             </motion.button>
             
@@ -95,9 +95,9 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center px-8 py-3 bg-transparent border-2 border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900 font-semibold rounded-lg transition-all duration-300 hardware-accelerated"
+              className="flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 bg-transparent border-2 border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900 font-semibold rounded-lg transition-all duration-300 hardware-accelerated text-sm sm:text-base"
             >
-              <Mail size={20} className="mr-2" />
+              <Mail size={18} className="mr-2" />
               Get In Touch
             </motion.button>
           </motion.div>
@@ -107,7 +107,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className="flex justify-center space-x-6 mb-12"
+            className="flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-12"
           >
             {[
               { icon: Github, href: 'https://github.com/Giridhar-07', label: 'GitHub' },
@@ -121,10 +121,10 @@ const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 hardware-accelerated"
+                className="p-2 sm:p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 hardware-accelerated"
                 aria-label={label}
               >
-                <Icon size={24} />
+                <Icon size={20} className="sm:w-6 sm:h-6" />
               </motion.a>
             ))}
           </motion.div>

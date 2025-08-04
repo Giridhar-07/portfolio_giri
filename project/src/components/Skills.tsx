@@ -18,21 +18,21 @@ const Skills: React.FC = () => {
       initial={{ opacity: 1, x: -30 }}
       animate={isIntersecting ? { opacity: 1, x: 0 } : { opacity: 1, x: -30 }}
       transition={{ duration: 0.6, delay: index * 0.15, ease: [0.4, 0, 0.2, 1] }}
-      className="mb-6"
+      className="mb-4 sm:mb-6"
     >
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
-        <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+      <div className="flex justify-between items-center mb-1.5 sm:mb-2">
+        <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
+        <div className="flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
           <span>{skill.years} year{skill.years !== 1 ? 's' : ''}</span>
           <span className="text-primary-600 dark:text-primary-400 font-semibold">{skill.level}%</span>
         </div>
       </div>
-      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 sm:h-2">
         <motion.div
           initial={{ width: 0 }}
           animate={isIntersecting ? { width: `${skill.level}%` } : { width: 0 }}
           transition={{ duration: 1.2, delay: index * 0.15 + 0.4, ease: [0.4, 0, 0.2, 1] }}
-          className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full hardware-accelerated"
+          className="bg-gradient-to-r from-primary-500 to-secondary-500 h-1.5 sm:h-2 rounded-full hardware-accelerated"
         />
       </div>
     </motion.div>
@@ -64,15 +64,15 @@ const Skills: React.FC = () => {
             initial={{ opacity: 1, y: 50 }}
             animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 1, y: 50 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-            className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated"
+            className="bg-white dark:bg-gray-900 rounded-xl p-5 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated"
           >
-            <div className="flex items-center mb-8">
-              <div className="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg mr-4 transition-colors duration-300">
-                <BarChart3 className="text-primary-600 dark:text-primary-400 transition-colors duration-300" size={32} />
+            <div className="flex items-center mb-6 sm:mb-8">
+              <div className="p-2 sm:p-3 bg-primary-100 dark:bg-primary-900 rounded-lg mr-3 sm:mr-4 transition-colors duration-300">
+                <BarChart3 className="text-primary-600 dark:text-primary-400 transition-colors duration-300" size={28} />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300">Data Analytics</h3>
-                <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">Turning data into actionable insights</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300">Data Analytics</h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 transition-colors duration-300">Turning data into actionable insights</p>
               </div>
             </div>
             
@@ -88,15 +88,15 @@ const Skills: React.FC = () => {
             initial={{ opacity: 1, y: 50 }}
             animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 1, y: 50 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated"
+            className="bg-white dark:bg-gray-900 rounded-xl p-5 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hardware-accelerated"
           >
-            <div className="flex items-center mb-8">
-              <div className="p-3 bg-secondary-100 dark:bg-secondary-900 rounded-lg mr-4 transition-colors duration-300">
-                <Code className="text-secondary-600 dark:text-secondary-400 transition-colors duration-300" size={32} />
+            <div className="flex items-center mb-6 sm:mb-8">
+              <div className="p-2 sm:p-3 bg-secondary-100 dark:bg-secondary-900 rounded-lg mr-3 sm:mr-4 transition-colors duration-300">
+                <Code className="text-secondary-600 dark:text-secondary-400 transition-colors duration-300" size={28} />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300">Web Development</h3>
-                <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">Building modern digital experiences</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300">Web Development</h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 transition-colors duration-300">Building modern digital experiences</p>
               </div>
             </div>
             
@@ -138,19 +138,19 @@ const Skills: React.FC = () => {
                 initial={{ opacity: 1, y: 30 }}
                 animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 1, y: 30 }}
                 transition={{ duration: 0.4, delay: 0.4 + index * 0.1, ease: [0.4, 0, 0.2, 1] }}
-                className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg text-center hover:shadow-xl hover-lift transition-all duration-300 hardware-accelerated"
+                className="bg-white dark:bg-gray-900 rounded-xl p-4 sm:p-6 shadow-lg text-center hover:shadow-xl hover-lift transition-all duration-300 hardware-accelerated"
               >
-                <div className="inline-flex p-3 bg-accent-100 dark:bg-accent-900 rounded-lg mb-4 transition-colors duration-300">
-                  <category.icon className="text-accent-600 dark:text-accent-400 transition-colors duration-300" size={28} />
+                <div className="inline-flex p-2 sm:p-3 bg-accent-100 dark:bg-accent-900 rounded-lg mb-3 sm:mb-4 transition-colors duration-300">
+                  <category.icon className="text-accent-600 dark:text-accent-400 transition-colors duration-300" size={24} />
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 transition-colors duration-300">
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 transition-colors duration-300">
                   {category.title}
                 </h4>
-                <div className="flex flex-wrap justify-center gap-2">
+                <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                      className="px-2 sm:px-3 py-0.5 sm:py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                     >
                       {skill}
                     </span>
