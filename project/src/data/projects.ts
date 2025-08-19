@@ -70,6 +70,7 @@ export const projects: Project[] = [
     status: 'completed',
     links: {
       github: 'https://github.com/Giridhar-07/ai_SDR-master',
+      demo: 'https://saarathi-lead.vercel.app/',
     },
     featured: true,
   },
@@ -84,7 +85,7 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     status: 'completed',
     links: {
-      github: 'https://github.com/Giridhar-07/Civic-track',
+      github: 'https://github.com/Giridhar-07/civitrack-app',
     },
     featured: true,
   },
