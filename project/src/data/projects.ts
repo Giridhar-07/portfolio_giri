@@ -58,8 +58,40 @@ export const projects: Project[] = [
     },
     featured: true,
   },
-  {
+
+    {
     id: '4',
+    title: 'AI-SDR',
+    description: 'Modern, responsive AI based SDR website built with React and TypeScript.',
+    longDescription: 'A professional Sales Dashboard website showcasing Leads, AI based meeting, and Many more features Invloved. Built with modern web technologies and featuring smooth animations, and responsive design.',
+    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'web',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    status: 'completed',
+    links: {
+      github: 'https://github.com/Giridhar-07/ai_SDR-master',
+    },
+    featured: true,
+  },
+
+    {
+    id: '5',
+    title: 'Civic Track',
+    description: 'Modern, responsive Civic-Track website built with React and TypeScript.',
+    longDescription: 'A professional Civic website For reporting Issues like road,saftey,Light etc and view issues reported by other users around 10kms and also request to update the status of the issue or flag the issue and also integrated with AI-chatbot for help . Built with modern web technologies and featuring  smooth animations, and responsive design.',
+    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'web',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+    status: 'completed',
+    links: {
+      github: 'https://github.com/Giridhar-07/Civic-track',
+    },
+    featured: true,
+  },
+
+
+  {
+    id: '6',
     title: 'Consulting firm website',
     description: 'Full-stack Consulting firm website built with React, Django, and SQLlite.',
     longDescription: 'Modern and responsive website for a consulting firm, featuring contact forms, Job posting,About the Projects, and dynamic content updates.',
@@ -73,7 +105,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: '5',
+    id: '7',
     title: 'Weather Analytics Dashboard',
     description: 'Real-time weather data visualization with historical trend analysis.',
     longDescription: 'Interactive dashboard that displays weather patterns and climate trends using real-time API data and historical datasets.',
@@ -85,7 +117,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: '6',
+    id: '8',
     title: 'HeliumThinks',
     description: 'Connect. Collaborate. Innovate.',
     longDescription: 'A cutting-edge platform to share skills, collaborate on groundbreaking projects, and find the perfect business partner in the digital age.',
