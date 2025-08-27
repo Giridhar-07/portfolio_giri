@@ -85,7 +85,7 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     status: 'completed',
     links: {
-      github: 'https://github.com/Giridhar-07/civitrack-app',
+      github: 'https://github.com/Giridhar-07/civitrack',
     },
     featured: true,
   },
