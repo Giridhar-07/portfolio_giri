@@ -13,7 +13,7 @@ const About: React.FC = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Giridhar Malagi_data - Resume.pdf';
+    link.href = '/Giridhar_Malagi_data_Resume.pdf';
     link.download = 'Giridhar_Malagi_Resume.pdf';
     link.click();
   };
