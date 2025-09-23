@@ -86,7 +86,7 @@ export const projects: Project[] = [
     status: 'completed',
     links: {
       github: 'https://github.com/Giridhar-07/civitrack',
-      demo: 'https://civictrac.netlify.app/',
+      demo: 'https://civitrack-dev.netlify.app/',
     },
     featured: true,
   },
