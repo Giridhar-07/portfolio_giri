@@ -10,6 +10,10 @@ const Hero: React.FC = () => {
     }
   };
 
+  /**
+   * handleDownloadResume
+   * Initiates download of the primary resume PDF from the public folder.
+   */
   const handleDownloadResume = () => {
     const link = document.createElement('a');
     link.href = '/Giridhar Malagi - Resume_.pdf';

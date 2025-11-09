@@ -26,8 +26,11 @@ const About: React.FC = () => {
    */
   const handleDownloadResume = () => {
     const link = document.createElement('a');
+
     // Use the exact filename as present in the public directory
     link.href = '/Giridhar Malagi - Resume_.pdf';
+    link.href = '/Giridhar_Malagi_data_Resume.pdf';
+
     link.download = 'Giridhar_Malagi_Resume.pdf';
     link.click();
   };
