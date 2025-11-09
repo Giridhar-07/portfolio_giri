@@ -128,7 +128,7 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
     status: 'in-progress',
     links: {
-      demo: 'https://technology-company-landing-page-76-48.lovable.app/',
+      demo: 'https://heliumthinks.lovable.app/',
       
     },
     featured: false,

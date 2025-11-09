@@ -1,0 +1,109 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - link "Skip to content" [ref=e4] [cursor=pointer]:
+    - /url: "#content"
+  - navigation [ref=e5]:
+    - generic [ref=e7]:
+      - generic [ref=e8]: GM
+      - generic [ref=e9]:
+        - button [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+        - button "Toggle mobile menu" [ref=e13] [cursor=pointer]:
+          - img [ref=e14]
+    - generic [ref=e16]:
+      - link "Home" [ref=e18] [cursor=pointer]:
+        - /url: /
+      - link "About" [ref=e20] [cursor=pointer]:
+        - /url: /about
+      - link "Skills" [ref=e22] [cursor=pointer]:
+        - /url: /skills
+      - link "Projects" [ref=e24] [cursor=pointer]:
+        - /url: /projects
+      - link "Certificates" [ref=e26] [cursor=pointer]:
+        - /url: /certificates
+      - link "Timeline" [ref=e28] [cursor=pointer]:
+        - /url: /timeline
+      - link "Contact" [ref=e30] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=e31]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - heading "Giridhar N Malagi" [level=1] [ref=e40]
+        - generic [ref=e41]: Electronics & Communication Engineering Student
+        - paragraph [ref=e42]: Passionate about Data Analytics and Web Development. Transforming ideas into impactful technological solutions through innovative thinking and continuous learning.
+        - generic [ref=e43]:
+          - img [ref=e44]
+          - generic [ref=e47]: India
+      - generic [ref=e48]:
+        - button "Download Resume" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+          - text: Download Resume
+        - button "Get In Touch" [ref=e53] [cursor=pointer]:
+          - img [ref=e54]
+          - text: Get In Touch
+      - generic [ref=e57]:
+        - link "GitHub" [ref=e58] [cursor=pointer]:
+          - /url: https://github.com/Giridhar-07
+          - img [ref=e59]
+        - link "LinkedIn" [ref=e62] [cursor=pointer]:
+          - /url: https://linkedin.com/in/giridharmalagi/
+          - img [ref=e63]
+        - link "Email" [ref=e67] [cursor=pointer]:
+          - /url: mailto:giridharmalagi7@gmail.com
+          - img [ref=e68]
+      - button [ref=e71] [cursor=pointer]:
+        - img [ref=e72]
+  - contentinfo [ref=e74]:
+    - generic [ref=e75]:
+      - generic [ref=e77]:
+        - generic [ref=e79]:
+          - heading "Giridhar Malagi" [level=3] [ref=e80]
+          - paragraph [ref=e81]: Passionate about transforming data into insights and creating digital experiences that make a difference. Always eager to take on new challenges and learn cutting-edge technologies.
+        - generic [ref=e83]:
+          - heading "Quick Links" [level=4] [ref=e84]
+          - list [ref=e85]:
+            - listitem [ref=e86]:
+              - link "About" [ref=e87] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e88]:
+              - link "Skills" [ref=e89] [cursor=pointer]:
+                - /url: /skills
+            - listitem [ref=e90]:
+              - link "Projects" [ref=e91] [cursor=pointer]:
+                - /url: /projects
+            - listitem [ref=e92]:
+              - link "Certificates" [ref=e93] [cursor=pointer]:
+                - /url: /certificates
+            - listitem [ref=e94]:
+              - link "Timeline" [ref=e95] [cursor=pointer]:
+                - /url: /timeline
+            - listitem [ref=e96]:
+              - link "Contact" [ref=e97] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e99]:
+          - heading "Get In Touch" [level=4] [ref=e100]
+          - generic [ref=e101]:
+            - paragraph [ref=e102]: India
+            - link "giridharmalagi7@gmail.com" [ref=e103] [cursor=pointer]:
+              - /url: mailto:giridharmalagi7@gmail.com
+            - generic [ref=e104]:
+              - link [ref=e105] [cursor=pointer]:
+                - /url: https://github.com/Giridhar-07
+                - img [ref=e106]
+              - link [ref=e109] [cursor=pointer]:
+                - /url: http://linkedin.com/in/giridharmalagi
+                - img [ref=e110]
+              - link [ref=e114] [cursor=pointer]:
+                - /url: mailto:giridharmalagi7@gmail.com
+                - img [ref=e115]
+      - generic [ref=e119]:
+        - generic [ref=e120]:
+          - generic [ref=e121]: © 2025 Giridhar Malagi. Made with
+          - img [ref=e122]
+          - generic [ref=e124]: and lots of coffee
+        - button "Back to top" [ref=e125] [cursor=pointer]:
+          - generic [ref=e126]: Back to top
+          - img [ref=e127]
+```
