@@ -12,8 +12,8 @@ const Hero: React.FC = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/resume_Giridhar_Data.pdf';
-    link.download = 'Giridhar_Malagi_Resume.pdf';
+    link.href = '/Giridhar_Malagi_data_Resume.pdf';
+    link.download = 'Giridhar Malagi_data - Resume.pdf';
     link.click();
   };
 
