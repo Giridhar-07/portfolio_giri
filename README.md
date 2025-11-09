@@ -1,5 +1,10 @@
 # Portfolio Website
 
+## Judges Quickstart
+- Setup: Works on Windows and Mac; requires Node 18+.
+- Run: `npm run dev` launches the app at `http://localhost:5173` (or next available port).
+- Demo: Use the top navigation to visit `About`, `Skills`, `Projects`, `Certificates`, `Timeline`, and `Contact`. Try dark mode toggle and submit the contact form with test data.
+
 ## Project Structure
 
 This repository contains a portfolio website with the following structure:
@@ -33,6 +38,13 @@ npm run dev
 
 This will start the development server in the project directory.
 
+## Demo Instructions (for Judges)
+- Navigate through the pages using the header. Active route is highlighted.
+- Toggle theme using the sun/moon button in the header.
+- Use the skip link (`Tab` once) to jump to main content for accessibility.
+- On mobile-sized viewports, open the hamburger menu, then navigate to pages.
+- On `Contact`, fill sample data and click `Send` to see form validation and submission flow.
+
 ## Building
 
 To build the project:
@@ -42,3 +54,18 @@ npm run build
 ```
 
 This will create a production build in the `project/dist` directory.
+
+## Testing
+- Unit tests: `cd project; npm run test:unit`
+- E2E tests (Playwright): `cd project; npm run test:e2e`
+- Coverage: `cd project; npm run coverage`
+
+## Routes
+- Implemented with `react-router-dom` under a shared layout:
+  - `/` Home
+  - `/about` About
+  - `/skills` Skills
+  - `/projects` Projects
+  - `/certificates` Certificates
+  - `/timeline` Timeline
+  - `/contact` Contact

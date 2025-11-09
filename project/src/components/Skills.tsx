@@ -120,7 +120,7 @@ const Skills: React.FC = () => {
               {
                 icon: Database,
                 title: 'Data Management',
-                skills: ['SQL Server', 'MongoDB', 'PostgreSQL', 'Data Warehousing'],
+                skills: ['SQL Server', 'NeonDB', 'PostgreSQL', 'Data Warehousing'],
               },
               {
                 icon: Globe,

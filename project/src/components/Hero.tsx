@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/resume_Giridhar_Data.pdf';
+    link.href = '/Giridhar Malagi - Resume_.pdf';
     link.download = 'Giridhar_Malagi_Resume.pdf';
     link.click();
   };
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
               className="text-sm sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-2 sm:mb-4 px-2 sm:px-4 transition-colors duration-300"
             >
-              Passionate about Data Analytics and Web Development. Transforming ideas into 
+              Passionate about Data Analytics and Full stack Development. Transforming ideas into 
               impactful technological solutions through innovative thinking and continuous learning.
             </motion.p>
 

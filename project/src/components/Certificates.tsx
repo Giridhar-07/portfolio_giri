@@ -52,7 +52,7 @@ const Certificates: React.FC = () => {
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6 transition-colors duration-300"></div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
             Professional certifications and achievements showcasing my expertise and continuous learning
-            in data science and web development.
+            in data science and Full Stack development.
           </p>
         </motion.div>
 
