@@ -128,9 +128,27 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
     status: 'in-progress',
     links: {
-      demo: 'https://technology-company-landing-page-76-48.lovable.app/',
+      demo: 'https://heliumthinks.lovable.app/',
       
     },
     featured: false,
+
+  }, 
+  {
+    id: '9',
+    title: 'Company Management System',
+    description: 'Complete company management system with employee tracking and analytics.',
+    longDescription: 'A robust system for managing company operations, including employee tracking and performance analytics.',
+    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'web',
+    technologies: ['Flask', 'SQLAlchemy', 'Bootstrap', 'JavaScript','HTML','CSS','Python','NeonDB'],
+    status: 'in-progress',
+    links: {
+      demo: 'https://employee-management-8em9.onrender.com/',
+      
+    },
+    featured: false,
+
+
   },
 ];

@@ -3,11 +3,13 @@ import { motion } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useScrollProgress } from '../hooks/useScrollProgress';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
   const scrollProgress = useScrollProgress();
+  const location = useLocation();
   
   // Close menu when clicking outside
   useEffect(() => {
@@ -35,22 +37,14 @@ const Navigation: React.FC = () => {
   }, [isMenuOpen]);
 
   const menuItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Certificates', href: '#certificates' },
-    { name: 'Timeline', href: '#timeline' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', to: '/' },
+    { name: 'About', to: '/about' },
+    { name: 'Skills', to: '/skills' },
+    { name: 'Projects', to: '/projects' },
+    { name: 'Certificates', to: '/certificates' },
+    { name: 'Timeline', to: '/timeline' },
+    { name: 'Contact', to: '/contact' },
   ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
 
   return (
     <>
@@ -81,16 +75,20 @@ const Navigation: React.FC = () => {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               {menuItems.map((item, index) => (
-                <motion.button
+                <motion.div
                   key={item.name}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium"
                 >
-                  {item.name}
-                </motion.button>
+                  <Link
+                    to={item.to}
+                    aria-current={location.pathname === item.to ? 'page' : undefined}
+                    className={`text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium ${location.pathname === item.to ? 'text-primary-600 dark:text-primary-400' : ''}`}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
               ))}
               
               {/* Theme Toggle */}
@@ -144,15 +142,16 @@ const Navigation: React.FC = () => {
         >
           <div className="px-4 py-2 space-y-0.5 sm:space-y-1">
             {menuItems.map((item) => (
-              <motion.button
-                key={item.name}
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.3 }}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-3 py-2 rounded-md text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
-              >
-                {item.name}
-              </motion.button>
+              <motion.div key={item.name} whileHover={{ x: 10 }} transition={{ duration: 0.3 }}>
+                <Link
+                  to={item.to}
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-current={location.pathname === item.to ? 'page' : undefined}
+                  className="block w-full text-left px-3 py-2 rounded-md text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
             ))}
           </div>
         </motion.div>

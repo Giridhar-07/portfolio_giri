@@ -20,9 +20,17 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+  /**
+   * Initialize theme state
+   * Prefers saved theme in localStorage; otherwise checks OS preference when available.
+   */
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const saved = localStorage.getItem('theme');
-    return saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved) return saved === 'dark';
+    const prefersDark = typeof window !== 'undefined' && typeof window.matchMedia === 'function'
+      ? window.matchMedia('(prefers-color-scheme: dark)').matches
+      : false;
+    return prefersDark;
   });
 
   useEffect(() => {

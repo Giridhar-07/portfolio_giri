@@ -1,38 +1,43 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Certificates from './components/Certificates';
-import Timeline from './components/Timeline';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-// Import test function for EmailJS
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
 import { testEmailJS } from './utils/emailTest';
 
-// Make test function available in development environment
+// Lazy-loaded pages for performance
+const Home = lazy(() => import('./pages/Home'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const SkillsPage = lazy(() => import('./pages/SkillsPage'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const CertificatesPage = lazy(() => import('./pages/CertificatesPage'));
+const TimelinePage = lazy(() => import('./pages/TimelinePage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+
+// Expose test helper in development
 if (import.meta.env.DEV) {
   window.testEmailJS = testEmailJS;
 }
 
+/**
+ * App component
+ * Wraps the application with ThemeProvider and React Router routes using MainLayout.
+ */
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 overflow-hidden">
-        <Navigation />
-        <main className="overflow-x-hidden w-full">
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Certificates />
-          <Timeline />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<MainLayout />}> 
+            <Route index element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/certificates" element={<CertificatesPage />} />
+            <Route path="/timeline" element={<TimelinePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

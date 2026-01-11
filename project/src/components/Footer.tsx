@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -43,19 +44,18 @@ const Footer: React.FC = () => {
               >
                 <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2">
-                  {['About', 'Skills', 'Projects', 'Certificates', 'Timeline', 'Contact'].map((item) => (
-                    <li key={item}>
-                      <button
-                        onClick={() => {
-                          const element = document.querySelector(`#${item.toLowerCase()}`);
-                          if (element) {
-                            element.scrollIntoView({ behavior: 'smooth' });
-                          }
-                        }}
-                        className="text-gray-300 hover:text-primary-400 transition-colors duration-300"
-                      >
-                        {item}
-                      </button>
+                  {[
+                    { label: 'About', to: '/about' },
+                    { label: 'Skills', to: '/skills' },
+                    { label: 'Projects', to: '/projects' },
+                    { label: 'Certificates', to: '/certificates' },
+                    { label: 'Timeline', to: '/timeline' },
+                    { label: 'Contact', to: '/contact' },
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link to={item.to} className="text-gray-300 hover:text-primary-400 transition-colors duration-300">
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>

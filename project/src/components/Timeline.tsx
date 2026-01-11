@@ -57,7 +57,7 @@ const Timeline: React.FC = () => {
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6 transition-colors duration-300"></div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
             A timeline of my professional growth, educational milestones, and key achievements
-            in data analysis and web development.
+            in data analysis and Full Stack development.
           </p>
         </motion.div>
 
