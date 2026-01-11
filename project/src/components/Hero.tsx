@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
               className="text-lg sm:text-2xl md:text-3xl text-primary-600 dark:text-primary-400 font-semibold mb-2 sm:mb-4 transition-colors duration-300"
             >
-              Electronics & Communication Engineering Student
+              Electronics & Communication Engineering 2025 Graduate
             </motion.div>
             
             <motion.p
